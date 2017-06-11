@@ -5,6 +5,7 @@ import com.example.model.Food;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import java.util.HashMap;
 import java.util.List;
 
 /**
@@ -26,6 +27,11 @@ public class FoodServiceImpl implements FoodService {
 	@Override
 	public Food getFoodByName(String foodName) {
 		return foodDao.getFoodByName(foodName);
+	}
+
+	@Override
+	public List<HashMap> getFoodWithCaloriesGreater(int calories) {
+		return foodDao.getFoodWithCaloriesGreater(calories);
 	}
 
 }

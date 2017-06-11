@@ -2,6 +2,7 @@ package com.example.service;
 
 import com.example.model.Food;
 
+import java.util.HashMap;
 import java.util.List;
 
 /**
@@ -11,5 +12,7 @@ public interface FoodService {
 	List getAllFood();
 
 	Food getFoodByName(String foodName);
+
+	List<HashMap> getFoodWithCaloriesGreater(int calories);
 
 }

@@ -10,6 +10,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
 
+import java.util.HashMap;
 import java.util.List;
 
 /**
@@ -33,6 +34,14 @@ public class FoodController {
 
 		Food food = foodService.getFoodByName(foodName);
 		return new ResponseEntity (food, HttpStatus.OK);
+
+	}
+
+	@RequestMapping(value = "/foodByCalories", method = RequestMethod.GET)
+	public ResponseEntity getFoodByName(@RequestParam(value ="calories", required = true) int calories){
+
+		List<HashMap> foodMap = foodService.getFoodWithCaloriesGreater(calories);
+		return new ResponseEntity (foodMap, HttpStatus.OK);
 
 	}
 
