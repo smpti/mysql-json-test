@@ -15,4 +15,6 @@ public interface FoodService {
 
 	List<HashMap> getFoodWithCaloriesGreater(int calories);
 
+	List<Integer> getFoodCaloriesWithPrice(int price);
+
 }

@@ -14,4 +14,6 @@ public interface FoodDao {
 	Food getFoodByName(String foodName);
 
 	List<HashMap> getFoodWithCaloriesGreater(int calories);
+
+	List<Integer> getFoodCaloriesWithPrice(int price);
 }

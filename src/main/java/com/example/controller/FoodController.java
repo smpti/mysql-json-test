@@ -38,9 +38,17 @@ public class FoodController {
 	}
 
 	@RequestMapping(value = "/foodByCalories", method = RequestMethod.GET)
-	public ResponseEntity getFoodByName(@RequestParam(value ="calories", required = true) int calories){
+	public ResponseEntity getFoodByCalories(@RequestParam(value ="calories", required = true) int calories){
 
 		List<HashMap> foodMap = foodService.getFoodWithCaloriesGreater(calories);
+		return new ResponseEntity (foodMap, HttpStatus.OK);
+
+	}
+
+	@RequestMapping(value = "/foodCaloriesByPrice", method = RequestMethod.GET)
+	public ResponseEntity getFoodCaloriesByPrice(@RequestParam(value ="price", required = true) int price){
+
+		List<Integer> foodMap = foodService.getFoodCaloriesWithPrice(price);
 		return new ResponseEntity (foodMap, HttpStatus.OK);
 
 	}

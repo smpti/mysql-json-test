@@ -52,5 +52,20 @@ public class FoodDaoImpl implements FoodDao {
 		return foodWithHigherCalories;
 	}
 
+	@Override
+	public List<Integer> getFoodCaloriesWithPrice(int price) {
+
+
+		//		List<Food> foodWithHigherCalories = entityManager.createNativeQuery(
+		//				"SELECT f.nutrition -> '$.ingredients.\\\"calories\\\"' FROM food f WHERE " +
+		//				"JSON_EXTRACT(f.nutrition, '$.ingredients.\\\"calories\\\"') > :calories")
+		List<Integer> foodWithHigherCalories = entityManager.createNativeQuery(
+				"select f.nutrition ->> '$.ingredients.\\\"calories\\\"' from food f where " +
+						"JSON_EXTRACT(f.nutrition, '$.\\\"priceInDollars\\\"') = :price")
+				.setParameter("price", price)
+				.getResultList();
+		return foodWithHigherCalories;
+	}
+
 
 }
