@@ -33,7 +33,7 @@ public class JsonStringSqlTypeDescriptor
 				);
 			}
 
-			@Override
+//			@Override
 			protected void doBind(
 					CallableStatement st,
 					X value,
