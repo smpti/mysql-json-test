@@ -1,9 +1,6 @@
 package com.example.model;
 
-import com.example.jsonSupport.JsonStringType;
-import org.hibernate.annotations.Type;
-import org.hibernate.annotations.TypeDef;
-import org.hibernate.annotations.TypeDefs;
+import com.example.jsonSupport.JsonObjectToLinkedHashMapConverter;
 
 import javax.persistence.*;
 import java.util.HashMap;
@@ -11,9 +8,7 @@ import java.util.HashMap;
 /**
  * Created by sandeep on 6/11/17.
  */
-@TypeDefs({
-		@TypeDef(name = "json", typeClass = JsonStringType.class),
-})
+
 @Entity
 public class Food {
 
@@ -23,8 +18,7 @@ public class Food {
 
 	private String name;
 
-	@Type(type = "json")
-	@Column(columnDefinition = "json")
+	@Convert(converter = JsonObjectToLinkedHashMapConverter.class)
 	private HashMap nutrition;
 
 	public int getId() {
