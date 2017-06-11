@@ -34,4 +34,9 @@ public class FoodServiceImpl implements FoodService {
 		return foodDao.getFoodWithCaloriesGreater(calories);
 	}
 
+	@Override
+	public List<Integer> getFoodCaloriesWithPrice(int price) {
+		return foodDao.getFoodCaloriesWithPrice(price);
+	}
+
 }
