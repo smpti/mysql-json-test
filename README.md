@@ -1,6 +1,6 @@
 # mysql-json-test
 
-This is to test the MySQL 5.7.8 version Json Column support with Hibernate and JDBC Driver using Spring Boot.
+This is to understand the MySQL 5.7.8 version Json Column support with Hibernate and JDBC Driver using Spring Boot.
 
 Objective: Identify the cleanest way of using Json column type through Java Entity and decide whether to 
 upgrade Hibernate to V5.2.10.Final from V4.3.10.Final.
