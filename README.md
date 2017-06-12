@@ -5,6 +5,18 @@ This is to test the MySQL 5.7.8 version Json Column support with Hibernate and J
 Objective: Identify the cleanest way of using Json column type through Java Entity and decide whether to 
 upgrade Hibernate to V5.2.10.Final from V4.3.10.Final.
 
+
+Jumping to required configuration:
+Checkout the corresponding tag to test it at that version.
+1. v_with-attribute_converter-hibernate4.3.10-jdbc5.1.42
+2. v_with-attribute_converter-hibernate4.3.10-jdbc6.0.6
+3. v_with-attribute_converter-hibernate5.2.10-jdbc5.1.42
+4. v_with-attribute_converter-hibernate5.2.10-jdbc6.0.6
+5. v_with-type_descriptor-hibernate4.3.10-jdbc5.1.42
+6. v_with-type_descriptor-hibernate4.3.10-jdbc6.0.6
+7. v_with-type_descriptor-hibernate5.2.10-jdbc5.1.42
+8. v_with-type_descriptor-hibernate5.2.10-jdbc6.0.6
+
 Variables: 
 1. mysql jdbc connector version - V5.1.42 , V6.0.6
 2. hibernate version - V4.3.10, V5.2.10
@@ -45,17 +57,6 @@ Insert into food values
 
 ##### Drop Table and DB#######
 Drop table food2;
-
-Jumping to required configuration:
-Checkout the corresponding tag to test it at that version.
-v_with-attribute_converter-hibernate4.3.10-jdbc5.1.42
-v_with-attribute_converter-hibernate4.3.10-jdbc6.0.6
-v_with-attribute_converter-hibernate5.2.10-jdbc5.1.42
-v_with-attribute_converter-hibernate5.2.10-jdbc6.0.6
-v_with-type_descriptor-hibernate4.3.10-jdbc5.1.42
-v_with-type_descriptor-hibernate4.3.10-jdbc6.0.6
-v_with-type_descriptor-hibernate5.2.10-jdbc5.1.42
-v_with-type_descriptor-hibernate5.2.10-jdbc6.0.6
 
 
 
